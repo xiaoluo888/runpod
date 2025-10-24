@@ -16,9 +16,9 @@ WORKDIR /workspace
 # install runpod（Serverless SDK）
 RUN pip install --no-cache-dir runpod
 
-COPY handler.py /workspace/rp_handler.py
+COPY .runpod/handler.py /workspace/handler.py
 
 EXPOSE 8180
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
-CMD ["python", "/workspace/rp_handler.py"]
+CMD ["python", "/workspace/handler.py"]
