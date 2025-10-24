@@ -1,0 +1,68 @@
+{
+    "title": "FastDeploy Serverless Worker",
+    "description": "Serverless worker using Baidu FastDeploy (CUDA 12.6).",
+    "type": "serverless",
+    "category": "language",
+    "iconUrl": "https://avatars.githubusercontent.com/u/23534030?s=48&v=4",
+    "config": {
+      "runsOn": "GPU",
+      "containerDiskInGb": 40,
+
+      "gpuCount": 1,
+      "gpuIds": "RTX A4000,-NVIDIA RTX 4090",
+      "allowedCudaVersions": [
+        "12.8", "12.7", "12.6"
+      ],
+  
+      "presets": [
+        {
+          "name": "ERNIE",
+          "defaults": {
+            "MODEL_REPO": "baidu/ERNIE-4.5-0.3B-Paddle",
+            "MAX_MODEL_LEN": "32768",
+            "MAX_NUM_SEQS": "32",
+            "ENABLE_V1_KVCACHE_SCHEDULER": "1"
+          }
+        }
+      ],
+  
+      "env": [
+        {
+          "key": "MODEL_REPO",
+          "input": {
+            "name": "Model repo/name",
+            "type": "string",
+            "description": "FastDeploy model repo or local path",
+            "default": "baidu/ERNIE-4.5-0.3B-Paddle"
+          }
+        },
+        {
+          "key": "MAX_MODEL_LEN",
+          "input": {
+            "name": "Max model length",
+            "type": "number",
+            "description": "Context window",
+            "min": 1024,
+            "max": 65536,
+            "default": 32768
+          }
+        },
+        {
+          "key": "MAX_NUM_SEQS",
+          "input": {
+            "name": "Max concurrent sequences",
+            "type": "number",
+            "description": "Batch/concurrency",
+            "min": 1,
+            "max": 64,
+            "default": 32
+          }
+        },
+        {
+          "key": "ENABLE_V1_KVCACHE_SCHEDULER",
+          "value": "1"
+        }
+      ]
+    }
+}
+
