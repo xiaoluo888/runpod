@@ -15,8 +15,7 @@ GPU: gpuCount=1
 
 Allowed CUDA: 12.8 / 12.7 / 12.6
 
-GPU IDs（允许调度的机型，测试期尽量放宽）：
-
+GPU IDs：
 NVIDIA H100 80GB HBM3,
 NVIDIA A100 80GB PCIe,
 NVIDIA RTX A2000, NVIDIA RTX A4000, NVIDIA RTX A5000, NVIDIA RTX A6000,
@@ -33,7 +32,7 @@ MAX_NUM_SEQS=32
 
 ENABLE_V1_KVCACHE_SCHEDULER=1
 
-Env（可在 UI 编辑）:
+Environment variables (editable in the UI):
 
 MAX_MODEL_LEN (number 1024–65536)
 
