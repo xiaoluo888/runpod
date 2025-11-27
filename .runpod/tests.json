@@ -26,7 +26,7 @@
         { "key": "MAX_NUM_SEQS", "value": "32" },
         { "key": "ENABLE_V1_KVCACHE_SCHEDULER", "value": "1" }
       ],
-      "allowedCudaVersions": ["12.7", "12.6", "12.5"]
+      "allowedCudaVersions": ["12.9", "12.8", "12.7", "12.6", "12.5"]
     }
   }
   
