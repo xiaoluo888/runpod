@@ -2,7 +2,7 @@
 <p align="center">
   <a href="https://github.com/PaddlePaddle/FastDeploy/releases"><img src="https://github.com/user-attachments/assets/42b0039f-39e3-4279-afda-6d1865dfbffb" width="500"></a>
 </p>
----
+
 
 [![Runpod](https://api.runpod.io/badge/xiaoluo888/runpod)](https://www.console.runpod.io/hub/xiaoluo888/runpod)
 
@@ -34,12 +34,12 @@
 ## Get Started
 
 Learn how to use FastDeploy through our documentation:
-- [10-Minutes Quick Deployment](./docs/get_started/quick_start.md)
-- [ERNIE-4.5 Large Language Model Deployment](./docs/get_started/ernie-4.5.md)
-- [ERNIE-4.5-VL Multimodal Model Deployment](./docs/get_started/ernie-4.5-vl.md)
-- [Offline Inference Development](./docs/offline_inference.md)
-- [Online Service Deployment](./docs/online_serving/README.md)
-- [Best Practices](./docs/best_practices/README.md)
+- [10-Minutes Quick Deployment](https://github.com/PaddlePaddle/FastDeploy/blob/develop/docs/get_started/quick_start.md)
+- [ERNIE-4.5 Large Language Model Deployment](https://github.com/PaddlePaddle/FastDeploy/blob/develop/docs/get_started/ernie-4.5.md)
+- [ERNIE-4.5-VL Multimodal Model Deployment](https://github.com/PaddlePaddle/FastDeploy/blob/develop/docs/get_started/ernie-4.5-vl.md)
+- [Offline Inference Development](https://github.com/PaddlePaddle/FastDeploy/blob/develop/docs/offline_inference.md)
+- [Online Service Deployment](https://github.com/PaddlePaddle/FastDeploy/blob/develop/docs/online_serving/README.md)
+- [Best Practices](https://github.com/PaddlePaddle/FastDeploy/blob/develop/docs/best_practices/README.md)
 
 ## Supported Models
 
@@ -48,11 +48,11 @@ Learn how to download models, enable using the torch format, and more:
 
 ## Advanced Usage
 
-- [Quantization](./docs/quantization/README.md)
-- [PD Disaggregation Deployment](./docs/features/disaggregated.md)
-- [Speculative Decoding](./docs/features/speculative_decoding.md)
-- [Prefix Caching](./docs/features/prefix_caching.md)
-- [Chunked Prefill](./docs/features/chunked_prefill.md)
+- [Quantization](https://github.com/PaddlePaddle/FastDeploy/blob/develop/docs/quantization/README.md)
+- [PD Disaggregation Deployment](https://github.com/PaddlePaddle/FastDeploy/blob/develop/docs/features/disaggregated.md)
+- [Speculative Decoding](https://github.com/PaddlePaddle/FastDeploy/blob/develop/docs/features/speculative_decoding.md)
+- [Prefix Caching](https://github.com/PaddlePaddle/FastDeploy/blob/develop/docs/features/prefix_caching.md)
+- [Chunked Prefill](https://github.com/PaddlePaddle/FastDeploy/blob/develop/docs/features/chunked_prefill.md)
 
 ## Acknowledgement
 

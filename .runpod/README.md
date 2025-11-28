@@ -2,7 +2,6 @@
 <p align="center">
   <a href="https://github.com/PaddlePaddle/FastDeploy/releases"><img src="https://github.com/user-attachments/assets/42b0039f-39e3-4279-afda-6d1865dfbffb" width="500"></a>
 </p>
----
 
 [![Runpod](https://api.runpod.io/badge/xiaoluo888/runpod)](https://www.console.runpod.io/hub/xiaoluo888/runpod)
 
@@ -16,7 +15,7 @@ All behaviour is controlled through environment variables:
 | ----------------------------------- | ------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------ |
 | `MODEL`                             | Path of the model weights                         | "baidu/ERNIE-4.5-0.3B-Paddle" | Local folder or Hugging Face repo ID                               |
 | `MAX_MODEL_LEN`                     | Model's maximum context length                    |                               | Integer (e.g., 4096)                                               |
-| `QUANTIZATION`                      | Quantization method                               |                               | "awq", "gptq", "squeezellm", "bitsandbytes"                        |
+| `QUANTIZATION`                      | Quantization method                               |                               | Model quantization strategy, when loading BF16 CKPT, specifying wint4 or wint8 supports lossless online 4bit/8bit quantization |
 | `TENSOR_PARALLEL_SIZE`              | Number of GPUs                                    | 1                             | Integer                                                            |
 | `GPU_MEMORY_UTILIZATION`            | Fraction of GPU memory to use                     | 0.9                           | Float between 0.0 and 1.0                                          |
 | `MAX_NUM_SEQS`                      | Maximum number of sequences per iteration         | 8                             | Integer                                                            |

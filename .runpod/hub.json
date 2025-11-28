@@ -114,6 +114,49 @@
             "name": "Quantization",
             "type": "string",
             "description": "Model quantization strategy, when loading BF16 CKPT, specifying wint4 or wint8 supports lossless online 4bit/8bit quantization.",
+            "options": [
+              {
+                "label": "BF16",
+                "value": "BF16"
+              },
+              {
+                "label": "wint2",
+                "value": "wint2"
+              },
+              {
+                "label": "wint4",
+                "value": "wint4"
+              },
+              {
+                "label": "wint8",
+                "value": "wint8"
+              },
+              {
+                "label": "block_wise_fp8",
+                "value": "block_wise_fp8"
+              },
+              {
+                "label": "w4afp8",
+                "value": "w4afp8"
+              },
+              {
+                "label": "w8a8",
+                "value": "w8a8"
+              },
+              {
+                "label": "w4a8",
+                "value": "w4a8"
+              },
+              {
+                "label": "wfp8afp8",
+                "value": "wfp8afp8"
+              },
+              {
+                "label": "tensor_wise_fp8",
+                "value": "tensor_wise_fp8"
+              }
+            ],
+            "default": "BF16",
             "advanced": true
           }
         },

@@ -11,14 +11,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates curl tini && \
     rm -rf /var/lib/apt/lists/*
 
-WORKDIR /workspace
-
 # install runpod（Serverless SDK）
 RUN pip install --no-cache-dir runpod
 
-COPY .runpod/handler.py /workspace/handler.py
 
 EXPOSE 8180
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
-CMD ["python", "/workspace/handler.py"]
+CMD ["python3", "/src/handler.py"]
