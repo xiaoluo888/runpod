@@ -24,12 +24,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Clear space to remove unused folders
+      - name: Free disk space
         run: |
-          rm -rf /usr/share/dotnet
-          rm -rf /opt/ghc
-          rm -rf "/usr/local/share/boost"
-          rm -rf "$AGENT_TOOLSDIRECTORY" || true
+          echo "Before cleanup:"
+          df -h
+
+          # 删掉一堆 GitHub 自带但你用不到的东西
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "/usr/local/share/boost"
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY" || true
+          sudo rm -rf /opt/hostedtoolcache || true
+          docker system prune -af || true
+
+          echo "After cleanup:"
+          df -h
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
