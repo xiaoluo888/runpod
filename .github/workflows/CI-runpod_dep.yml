@@ -23,6 +23,13 @@ jobs:
           
           # Get current version, allowing both == and ~= in the search pattern
           current_version=$(grep -oP 'runpod[~=]{1,2}\K[^"]+' ./builder/requirements.txt)
+          current_version=$(grep -oP 'runpod[^\d]*\K[0-9]+(\.[0-9]+)*' ./builder/requirements.txt || true)
+          if [ -z "$current_version" ]; then
+              echo "No runpod version line matched, skip update."
+              exit 0
+          fi
+
+
           echo "Current version: $current_version"
 
           # Extract major and minor from current version
