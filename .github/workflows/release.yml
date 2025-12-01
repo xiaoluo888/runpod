@@ -1,0 +1,77 @@
+name: Release
+
+on:
+  # 推送版本 tag（例如 v0.1.2）时自动触发
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+*"
+  # 手动在 Actions 页面触发
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release (e.g., v0.1.2)"
+        required: true
+        type: string
+
+permissions:
+  contents: write # Required for creating GitHub releases
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Clear space to remove unused folders
+        run: |
+          rm -rf /usr/share/dotnet
+          rm -rf /opt/ghc
+          rm -rf "/usr/local/share/boost"
+          rm -rf "$AGENT_TOOLSDIRECTORY" || true
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Determine release version
+        id: vars
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            VERSION="${{ github.event.inputs.version }}"
+          else
+            VERSION="${GITHUB_REF#refs/tags/}"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      # 用 docker/build-push-action 直接 build Dockerfile 并推到 Docker Hub
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile          # 如果你的 Dockerfile 名字/路径不同，这里改一下
+          push: true
+          tags: |
+            xiaoluo888/worker-fastdeploy:${{ steps.vars.outputs.version }}
+            xiaoluo888/worker-fastdeploy:latest
+
+      - name: Release Summary
+        run: |
+          echo "🚀 Release completed!"
+          echo "Version: ${{ steps.vars.outputs.version }}"
+          echo "Docker Image: xiaoluo888/worker-fastdeploy:${{ steps.vars.outputs.version }}"
+          echo "Docker Image (latest): xiaoluo888/worker-fastdeploy:latest"
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "Trigger: Manual workflow dispatch"
+          else
+            echo "Trigger: Tag push ($GITHUB_REF)"
+          fi
