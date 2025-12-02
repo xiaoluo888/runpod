@@ -68,7 +68,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./Dockerfile          # 如果你的 Dockerfile 名字/路径不同，这里改一下
+          file: ./Dockerfile         
           push: true
           tags: |
             xiaoluo888/worker-fastdeploy:${{ steps.vars.outputs.version }}
