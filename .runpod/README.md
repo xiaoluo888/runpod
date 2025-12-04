@@ -1,9 +1,11 @@
+![FastDeploy worker banner](../public/banner.png)
 
-<p align="center">
-  <a href="https://github.com/PaddlePaddle/FastDeploy/releases"><img src="https://github.com/user-attachments/assets/42b0039f-39e3-4279-afda-6d1865dfbffb" width="500"></a>
-</p>
+---
 
 [![Runpod](https://api.runpod.io/badge/xiaoluo888/runpod)](https://www.console.runpod.io/hub/xiaoluo888/runpod)
+
+---
+
 
 # FastDeploy : Inference and Deployment Toolkit for LLMs and VLMs based on PaddlePaddle
 
@@ -103,7 +105,7 @@ For external clients and SDKs, use the `/openai/v1` path prefix with your RunPod
 
 ```json
 {
-  "model": "meta-llama/Llama-2-7b-chat-hf",
+  "model": "baidu/ERNIE-4.5-0.3B-Paddle",
   "messages": [
     { "role": "system", "content": "You are a helpful assistant." },
     { "role": "user", "content": "What is the capital of France?" }
@@ -117,7 +119,7 @@ For external clients and SDKs, use the `/openai/v1` path prefix with your RunPod
 
 ```json
 {
-  "model": "meta-llama/Llama-2-7b-chat-hf",
+  "model": "baidu/ERNIE-4.5-0.3B-Paddle",
   "messages": [
     { "role": "user", "content": "Write a short story about a robot." }
   ],
@@ -133,7 +135,7 @@ For external clients and SDKs, use the `/openai/v1` path prefix with your RunPod
 
 ```json
 {
-  "model": "meta-llama/Llama-2-7b-chat-hf",
+  "model": "baidu/ERNIE-4.5-0.3B-Paddle",
   "prompt": "The capital of France is",
   "max_tokens": 100,
   "temperature": 0.7
@@ -192,7 +194,7 @@ client = OpenAI(
 
 ```python
 response = client.chat.completions.create(
-    model="meta-llama/Llama-2-7b-chat-hf",
+    model="baidu/ERNIE-4.5-0.3B-Paddle",
     messages=[{"role": "user", "content": "Explain quantum computing in simple terms"}],
     temperature=0,
     max_tokens=100,
@@ -204,7 +206,7 @@ print(f"Response: {response.choices[0].message.content}")
 
 ```python
 response_stream = client.chat.completions.create(
-    model="meta-llama/Llama-2-7b-chat-hf",
+    model="baidu/ERNIE-4.5-0.3B-Paddle",
     messages=[{"role": "user", "content": "Explain quantum computing in simple terms"}],
     temperature=0,
     max_tokens=100,

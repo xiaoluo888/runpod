@@ -18,7 +18,7 @@
         {
           "name": "Model",
           "defaults": {
-            "MODEL_REPO": "baidu/ERNIE-4.5-0.3B-Paddle",
+            "MODEL": "baidu/ERNIE-4.5-0.3B-Paddle",
             "MAX_MODEL_LEN": "32768",
             "MAX_NUM_SEQS": "32",
             "ENABLE_V1_KVCACHE_SCHEDULER": "1"
