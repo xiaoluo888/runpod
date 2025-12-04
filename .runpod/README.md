@@ -7,7 +7,6 @@
 ---
 
 
-# FastDeploy : Inference and Deployment Toolkit for LLMs and VLMs based on PaddlePaddle
 
 ## Endpoint Configuration
 

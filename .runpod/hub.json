@@ -1,6 +1,6 @@
 {
     "title": "FastDeploy",
-    "description": "Serverless worker using Baidu FastDeploy (CUDA 12.6).",
+    "description": "FastDeploy : Inference and Deployment Toolkit for LLMs and VLMs based on PaddlePaddle.",
     "type": "serverless",
     "category": "language",
     "iconUrl": "https://avatars.githubusercontent.com/u/23534030?s=48&v=4",
@@ -16,11 +16,9 @@
   
       "presets": [
         {
-          "name": "Model",
+          "name": "baidu/ERNIE-4.5-0.3B-Paddle",
           "defaults": {
             "MODEL": "baidu/ERNIE-4.5-0.3B-Paddle",
-            "MAX_MODEL_LEN": "32768",
-            "MAX_NUM_SEQS": "32",
             "ENABLE_V1_KVCACHE_SCHEDULER": "1"
           }
         }
