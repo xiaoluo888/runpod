@@ -1,4 +1,4 @@
-![FastDeploy worker banner](../public/banner.png)
+![FastDeploy worker banner](https://github.com/xiaoluo888/worker-FastDeploy/blob/main/public/banner.png)
 
 ---
 
