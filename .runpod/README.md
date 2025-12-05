@@ -1,4 +1,4 @@
-![FastDeploy worker banner](https://github.com/xiaoluo888/worker-FastDeploy/blob/main/public/banner.png)
+![FastDeploy worker banner](https://github.com/user-attachments/assets/42b0039f-39e3-4279-afda-6d1865dfbffb)
 
 ---
 
